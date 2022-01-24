@@ -1,0 +1,21 @@
+{
+    "name": "backend",
+    "version": "1.0.0",
+    "description": "This is an app hero Marvel",
+    "main": "index.js",
+    "scripts": {
+        "dev": "nodemon ."
+    },
+    "author": "John_Garzon",
+    "license": "ISC",
+    "dependencies": {
+        "axios": "^0.25.0",
+        "cors": "^2.8.5",
+        "dotenv": "^14.2.0",
+        "express": "^4.17.2",
+        "md5": "^2.3.0",
+        "mongoose": "^6.1.7",
+        "node-fetch": "^3.2.0",
+        "nodemon": "^2.0.15"
+    }
+}
