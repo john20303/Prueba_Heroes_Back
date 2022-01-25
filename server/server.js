@@ -10,6 +10,8 @@ class Server {
 
         //Endpoints
         this.marvel = '/api/marvel'; // este es nuestro endpoint del marvel!
+        this.getColor = '/api/color';
+        this.postColor = '/api/color';
         this.conn();
 
 
@@ -30,6 +32,8 @@ class Server {
 
     routes() {
         this.app.use(this.marvel, require('../routes/marvel'));
+        this.app.use(this.getColor, require('../routes/color'));
+        this.app.use(this.postColor, require('../routes/color'));
     }
 
     listen() {

@@ -1,5 +1,6 @@
 // const fetch = require('node-fetch');
 const axios = require("axios");
+const Color = require('../models/heroe');
 
 // Bring all the hero!
 const getMarvelAll = async(req, res) => {
@@ -34,7 +35,9 @@ const getHeroById = async(req, res) => {
     }
 };
 
+
+
 module.exports = {
     getMarvelAll,
-    getHeroById,
+    getHeroById
 };
