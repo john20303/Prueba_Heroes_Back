@@ -1,6 +1,6 @@
 const Color = require('../models/heroe');
 
-
+// Mostrar los colores
 const getColor = async(req, res) => {
 
     try {
@@ -34,8 +34,36 @@ const getColor = async(req, res) => {
 }
 
 
-// Api para crear el color
+// Color By Id
+const getColorById = async(req, res) => {
 
+    try {
+        const color = req.params.color.toUpperCase();
+        const dbColor = await Color.findOne({ color });
+        if (!dbColor) {
+            return res.status(404).json({
+                ok: false,
+                msg: `El color ${color} no existe`
+            })
+        }
+
+        res.status(200).json({
+            ok: true,
+            dbColor
+        })
+
+
+    } catch (error) {
+        console.log(error);
+        res.status(500).json({
+            ok: false,
+            msg: "Error en el server"
+        })
+    }
+}
+
+
+// Api para crear el color
 const postColor = async(req, res) => {
     const color = req.body.color.toUpperCase();
 
@@ -59,5 +87,6 @@ const postColor = async(req, res) => {
 
 module.exports = {
     getColor,
-    postColor
+    postColor,
+    getColorById
 }
